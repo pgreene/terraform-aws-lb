@@ -16,11 +16,13 @@ resource "aws_lb" "general" {
   idle_timeout = var.idle_timeout 
 
   access_logs {
-    bucket  = var.access_logs_s3bucket
-    prefix  = var.name
+    bucket = var.access_logs_s3bucket
+    prefix = var.prefix
     enabled = var.access_logs_enabled
   }
 
+  desync_mitigation_mode = var.desync_mitigation_mode
+  enable_waf_fail_open = var.enable_waf_fail_open
 ////Please note that one of either subnets or subnet_mapping is required.
 //  dynamic subnet_mapping {
 //    for_each = var.subnet_mapping == null ? [] : list(var.subnet_mapping)

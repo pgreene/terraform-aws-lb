@@ -3,6 +3,10 @@ variable "name" {
   default = ""
 }
 
+variable "prefix" {
+  default = null
+}
+
 variable "tags" {
   default = {}
 }
@@ -62,6 +66,13 @@ variable "ip_address_type" {
   default = null
 }
 
+variable "enable_waf_fail_open" {
+  default = null
+}
+
+variable "desync_mitigation_mode" {
+  default = null
+}
 // variable "subnet_mapping" {
 //   default = null
 // }
